@@ -19,7 +19,7 @@ function getApp() {
     body.style.backgroundColor = "red";
   }
 
-  if (value == "RGB") {
+  if (value === "RGB") {
     type.style.display = "none";
     input.style.display = "inline-block";
     type.value = "";
