@@ -22,8 +22,6 @@ function getApp() {
   if (value === "RGB") {
     type.style.display = "none";
     input.style.display = "inline-block";
-    type.value = "";
-    input.value = "";
 
     headingThree.style.display = "none";
     const heading = document.createElement("h3");
@@ -35,6 +33,18 @@ function getApp() {
     heading.textContent = "You Have Successfully Entered the Realm";
 
     titleHeader.textContent = "Welcome to My Dumb IDEA...";
+    type.value = "";
+    input.value = "";
+  }
+
+  if (value == "Random") {
+    const r = Math.floor(Math.random() * 255).toString(16);
+    const g = Math.floor(Math.random() * 255).toString(16);
+    const b = Math.floor(Math.random() * 255).toString(16);
+
+    document.body.style.backgroundColor = "#" + r + g + b;
+    type.value = "";
+    // input.value = "";
   }
 }
 
