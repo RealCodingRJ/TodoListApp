@@ -1,5 +1,5 @@
 function isEmpty(string) {
-  const isEmptyString = string === "" ? "Empty" : string;
+  const isEmptyString = string == "" ? "Empty" : string;
   return isEmptyString;
 }
 
@@ -12,29 +12,29 @@ function getApp() {
   const titleHeader = document.getElementById("titleHeader");
 
   const body = document.body;
+  const headingThree = document.getElementById("emptyMessage");
 
   if (isEmpty(value)) {
-    const headingThree = document.createElement("h3");
-    body.append(headingThree);
     headingThree.textContent = "Empty...".toUpperCase();
     body.style.backgroundColor = "red";
-  } else {
-    if (value == "RGB") {
-      type.style.display = "none";
-      input.style.display = "inline-block";
-      type.value = "";
-      input.value = "";
+  }
 
-      const heading = document.createElement("h3");
+  if (value == "RGB") {
+    type.style.display = "none";
+    input.style.display = "inline-block";
+    type.value = "";
+    input.value = "";
 
-      body.style.backgroundColor = "green";
-      body.style.fontFamily = "sans-serif";
+    headingThree.style.display = "none";
+    const heading = document.createElement("h3");
 
-      document.body.appendChild(heading);
-      heading.textContent = "You Have Successfully Entered the Realm";
+    body.style.backgroundColor = "green";
+    body.style.fontFamily = "sans-serif";
 
-      titleHeader.textContent = "Welcome to My Dumb IDEA...";
-    }
+    document.body.appendChild(heading);
+    heading.textContent = "You Have Successfully Entered the Realm";
+
+    titleHeader.textContent = "Welcome to My Dumb IDEA...";
   }
 }
 
